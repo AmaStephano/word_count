@@ -9,6 +9,7 @@ def reverse_tuple(tup):
 
 def reverse_and_neg_tuple(tup):
 
+    #make number negative and sort based on that. Won't actually affect tuple your are sorting.
     return (-1 * tup[1], tup[0])
 
 def word_counter(filename):
