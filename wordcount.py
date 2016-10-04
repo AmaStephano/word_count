@@ -7,6 +7,10 @@ def reverse_tuple(tup):
 
     return (tup[1], tup[0])
 
+def reverse_and_neg_tuple(tup):
+
+    return (-1 * tup[1], tup[0])
+
 def word_counter(filename):
     with open(filename) as word_file:
         # entire file as one string
@@ -24,9 +28,11 @@ def word_counter(filename):
         # word_counts.items() returns tuples of key value pairs. 
         # itemgetter sorts tuples first on count then key
         #for word, count in sorted(word_counts.items(), key=itemgetter(1,0)):
+        # for word, count in sorted(word_counts.items(),
+        #                           reverse=True,
+        #                           key=reverse_tuple):
         for word, count in sorted(word_counts.items(),
-                                  reverse=True,
-                                  key=reverse_tuple):
+                                  key=reverse_and_neg_tuple):
             print word, count
 
 word_file = argv[1]
